@@ -4,10 +4,10 @@ Since this project is about configuration files for vim, there isn't probably mu
 
 The following categories can be found
 
-- [Browsing](../Browsing)
-- [Character Encoding](../Character-Encoding)
-- [Compiling](../Compiling)
-- [Configuration](../Configuration)
+- [Browsing](Browsing)
+- [Character Encoding](Character-Encoding)
+- [Compiling](Compiling)
+- [Configuration](Configuration)
 - [External Commands]
 - [Open Commands]
 - [Plugins]
