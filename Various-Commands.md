@@ -195,3 +195,7 @@ Some commands
 - `zw` Mark a word as a bad one
 - `zuw` Undo previous
 - `z=` or `<C-x>` in insert mode Suggest correct word
+
+### count characters
+
+`g <C-g>` gives the number of words and characters on a visually selected text.
