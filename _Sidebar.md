@@ -67,3 +67,4 @@
   - [Closing Files](Various-Commands#closing-files)
   - [Arguments List](Various-Commands#arguments-list)
   - [Spell Checking](Various-Commands#spell-checking)
+  - [Count Characters](Various-Commands#count-characters)
