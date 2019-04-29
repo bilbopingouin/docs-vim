@@ -2,9 +2,46 @@
 
 ### marks
 
-- `ma`     sets mark 'a'
-- `` `a``    jumps to mark 'a'
-- `:marks` list marks
+Bookmarking a position in a file
+
+Set a mark
+
+    ma      " sets mark 'a'
+    :ma[rk] a
+    :ka
+    
+Jump to mark
+
+    `a      " jumps to mark 'a'. Jumps to the specified location. Mostion is exclusive.
+    'a      " jumps to mark 'a'. Jumps to the first non-blank character of that line.
+    g'a     " jumps to mark 'a'. Does not change the jumplist
+    g`a     " same as above
+    
+List currently defined marks
+
+    :marks  " list marks
+    
+Delete marks
+
+    :delm[arks] a       delete mark 'a'
+    :delm[arks]!        delete all marks (not A-Z 0-9)
+    
+Special marks
+
+- `[ `or `]`    useful for multiple commands simulated operators: first or last characters of the previously 
+    changed or yanked text
+- `<` or `>`    useful for gv: first and last characters of the previously visually selected text
+- `'` or ```    previous context mark (use '' or ``): position before the lastest jump
+- `"`           position where last exiting the buffer
+- `^`           position of the last insert
+- `.`           position where the last change was made
+- `(` or `)`    start or end of the sentence
+- `{` or `}`    start or end of paragraph
+- `a-z`         buffer specific
+- `A-Z`         include filename/can jump to other files
+- `0-9`         from .viminfo
+        
+
 
 ### fold
 
@@ -43,6 +80,16 @@ for git mergetools
 - `:diffget BA` take it from BASE
 - `:diffget LO` take it from local
 
+Check the diff of two currently opened files
+
+- `:windo :diffthis`		runs the diff of the two currently opened files (if, e.g. opened with a split)
+- `:diffsplit Filename`		opens Filename and diff it with current buffer
+- `:vert diffplit Filename`	same as above but vertical split
+- `:diffpatch Patch-name`	opens the patch, apply it to the current buffer and opens it for diffing
+- `:vert diffpatch Patch-name`	same as above, but vertical split
+    
+See also [diffpatch using the output of git diff directly](https://vi.stackexchange.com/questions/17117/diffpatch-using-the-output-of-git-diff-directly)
+ 
 ### select mode
 
 select is similar to visual but with some differences: writing overwrites selected text
@@ -172,11 +219,13 @@ this is an alternative to
 
     $ vim -p *.gp
 
-which work from within vim itself. Interestingly when callin that function the argument list is filled with all the gp files opens all the gp file in the directory. It replaces the currently opened tabs.
+which work from within vim itself. Interestingly when calling that function the argument list is filled with all the gp files opens all the gp file in the directory. It replaces the currently opened tabs.
 
 - `:args`           without argument list the argument list
 - `:argadd file`    adds file to the argument list
 - `:argdel file`    removes file from the argument list
+
+See also [Opening files](Open-Commands)
     
 ### spell-checking
   
@@ -196,6 +245,49 @@ Some commands
 - `zuw` Undo previous
 - `z=` or `<C-x>` in insert mode Suggest correct word
 
+See also [External Commands](External-Commands)
+
 ### count characters
 
 `g <C-g>` gives the number of words and characters on a visually selected text.
+
+### Copy-paste in command
+  
+Switch to visual mode
+
+  v
+
+Select word with arrows and then yank it
+
+  y
+
+In command write
+
+  :<C-r>"
+
+pastes the selected word
+    
+### Recall and edit previous commands/searches
+  
+Display last commands
+
+    q:
+
+Display last searches
+
+    q/
+
+Then one can select, and edit the commands. Run them using <enter>, close using :q
+When entering a command, it is possible to enter the command window with
+
+    <C-f>
+        
+### Sorting
+  
+Sorting lines, visual select a few lines and then
+
+    :sort
+
+More on `:help :sort`
+
+

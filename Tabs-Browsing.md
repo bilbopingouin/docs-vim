@@ -20,3 +20,10 @@ Tabs is a great feature of vim! Some commands may be interesting
 - `:tabdo {cmd}`   run cmd on all tabs. To some extend it is similar to `:bufo`
 - `:tabs`          list all current tabs
 
+### Move current buffer to its own tab
+  
+When the window is split, one can move the current buffer to its own tab using
+
+    <C-w>T
+    
+See also [How do I move an existing window to a new tab](https://stackoverflow.com/questions/1758301/how-do-i-move-an-existing-window-to-a-new-tab#1761745)

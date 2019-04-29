@@ -174,7 +174,8 @@ As of 2015.05.20, the features in default compilation of vim 7.4 contains the fo
 
 I want to get the most recent, but change some settings. I want to add `+profile +mouse_gpm +mouse_netterm +csope +conceal +clipboard +xterm_clipboard`
 
-
-        $ make distclean
-        # aptitude install libx11-dev libxtst-dev libgpm-dev
-        $ ./configure --enable-cscope
+```
+$ make distclean
+# aptitude install libx11-dev libxtst-dev libgpm-dev
+$ ./configure --enable-cscope
+```

@@ -53,7 +53,7 @@ In "insert" or "replace" mode,
 - any character which has a "digraph" (there are a huge lot of them, see `:dig` after setting `enc=utf-8`) can be entered with a `Ctrl-K` prefix
 - any utf character at all can be entered with a `Ctrl-V` prefix, either `<Ctrl-V> u aaaa` or `<Ctrl-V> U bbbbbbbb`, with 0 <= aaaa <= FFFF, or 0 <= bbbbbbbb <= 7FFFFFFF
 
-Unicode can be used to create html "body text", at least for Netscape 6 and probably for IE; but on my machine it doesn't display properly as "title text" (i.e., between <title></title> tags in the  <head> part).
+Unicode can be used to create html "body text", at least for Netscape 6 and probably for IE; but on my machine it doesn't display properly as "title text" (i.e., between `<title></title>` tags in the  `<head>` part).
 
 Gvim will display it properly if you have the fonts for it, provided that you set 'guifont' to some fixed-width font which has the glyphs you want to use (Courier New is OK for French, German, Greek, Russian and more, but I'm not sure about Hebrew or Arabic; its glyphs are of a more "fixed" width than those of, e.g. Lucida Console: the latter can be annoying if you need bold Cyrillic writing).
 
