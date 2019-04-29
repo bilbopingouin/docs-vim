@@ -10,6 +10,7 @@ The following categories can be found
 
 - [Browsing](Browsing)
 - [Character Encoding](Character-Encoding)
+- [Code Review](Code-Review)
 - [Compiling](Compiling)
 - [Configuration](Configuration)
 - [External Commands](External-Commands)
@@ -20,3 +21,5 @@ The following categories can be found
 - [Specific Configuration](Specific-Configuration)
 - [Tabs browsing](Tabs-Browsing)
 - [Various Commands](Various-Commands)
+
+

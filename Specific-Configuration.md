@@ -6,7 +6,7 @@ When incrementing, numbers starting with 0x are recognised as hexa and the ones 
 
     :se nrformats=hex
 
-also possible values are 'octal' and 'alpha'.
+also possible values are `octal` and `alpha`.
 
 ### Abreviations
 

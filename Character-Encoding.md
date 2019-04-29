@@ -5,7 +5,7 @@
 
 It is possible to map the keys, if the behaviour is not as expected.
 
-```
+```vim
 if $LANG == 'ja_JP.EUC-JP'
   " echo "Running Japanese"
   :se term=builtin_ansi
@@ -63,7 +63,7 @@ Gvim will display it properly if you have the fonts for it, provided that you se
 
 Change German characters to LaTeX
 
-```
+```vim
 function! Deu2utf()
 
   " Removing ignorecase to avoid problems

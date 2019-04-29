@@ -31,7 +31,7 @@ Special marks
 - `[ `or `]`    useful for multiple commands simulated operators: first or last characters of the previously 
     changed or yanked text
 - `<` or `>`    useful for gv: first and last characters of the previously visually selected text
-- `'` or ```    previous context mark (use '' or ``): position before the lastest jump
+- `'` or `\``    previous context mark (use `''` or `\`\``): position before the lastest jump
 - `"`           position where last exiting the buffer
 - `^`           position of the last insert
 - `.`           position where the last change was made

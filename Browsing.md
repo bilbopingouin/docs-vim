@@ -30,7 +30,7 @@ It is also possible to call the browsing ayntime using one of the following
 
 One can also define a few variables in a `.vimrc`:
 
-```
+```vim
 map <F9> :Vexplore<CR>                " calls Vexplore faster
 let g:netrw_list_hide = '^\.[a-zA-Z]' " hide linux hidden files: toggle with 'a'
 let g:netrw_preview   = 1             " split vertically for previews: opens vertically using 'p'
