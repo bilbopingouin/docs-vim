@@ -3,6 +3,8 @@
 - [Character Encoding](Character-Encoding)
   - [Keyboard Mapping](Character-Encoding#keyboard-mapping-for-exotic-keyboards-inputs)
   - [Scripts](Character-Encoding#scripts)
+- [Code Review](Code-Review)
+  - 
 - [Compiling](Compiling)
   - [Get the sources](Compiling#get-the-sources)
   - [Compiling](Compiling#compiling-1)
