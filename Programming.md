@@ -4,21 +4,29 @@
 
 Activate indent
 
-    :filetype indent on
+```vim
+:filetype indent on
+```
 
 Deactivate indent
 
-    :filetype indent off
+```vim
+:filetype indent off
+```
 
 See also [Ref](http://vimdoc.sourceforge.net/htmldoc/usr_30.html#30.3)
 
 Indent with respects with C programming
 
-    :se cindent
+```vim
+:se cindent
+```
 
 Probably better still
 
-    au FileType c,cpp set cindent " activates cindent but only for these types of files
+```vim
+au FileType c,cpp set cindent " activates cindent but only for these types of files
+```
 
 See also the [indentation configuration](Configuration#indentation)
 
@@ -33,7 +41,7 @@ cindent options:
 - `cinkeys`:    keys trigger in insert mode  
   default: `0{,0},0),:,0#,!^F,o,O,e`  
   indent if  
-  - `{, }, )` or `#` as first character in a line
+  - `{`, `}`, `)` or `#` as first character in a line
   - `:`   after a label/case
   - `<ctrl-F>`
   - `<CR>`, `o` or `O` (not in insert)
@@ -82,48 +90,58 @@ cindent options:
 		
 Removing indent when pasting
 
-    set paste
+```vim
+set paste
+```
 
 Re-enabling
 
-    set nopaste
+```vim
+set nopaste
+```
 
 Toggling
 
-    set pastetoggle=<F10>
+```vim
+set pastetoggle=<F10>
+```
     
 ### Tab/spaces
 
 Keep the linux standart (when using other editors: less, a2ps...)
 
-    :se tabstop=8
+```vim
+:se tabstop=8
+```
 
 Make it using spaces in indenting: so that it looks reasonnable
 (8 spaces being much too large).
 
-    :se softtabstop=2
-    :se shiftwidth=2
-    :se noet
+```vim
+:se softtabstop=2
+:se shiftwidth=2
+:se noet
+```
 
 From the manual:
 
 > There are four main ways to use tabs in Vim:  
-  1. Always keep 'tabstop' at 8, set 'softtabstop' and 'shiftwidth' to 4
-     (or 3 or whatever you prefer) and use 'noexpandtab'.  Then Vim
-     will use a mix of tabs and spaces, but typing <Tab> and <BS> will
-     behave like a tab appears every 4 (or 3) characters.
-  2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
-     'expandtab'.  This way you will always insert spaces.  The
-     formatting will never be messed up when 'tabstop' is changed.
-  3. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use a
-     |modeline| to set these values when editing the file again.  Only
-     works when using Vim to edit the file.
-  4. Always set 'tabstop' and 'shiftwidth' to the same value, and
-     'noexpandtab'.  This should then work (for initial indents only)
-     for any tabstop setting that people use.  It might be nice to have
-     tabs after the first non-blank inserted as spaces if you do this
-     though.  Otherwise aligned comments will be wrong when 'tabstop' is
-     changed.
+    1. Always keep 'tabstop' at 8, set 'softtabstop' and 'shiftwidth' to 4
+       (or 3 or whatever you prefer) and use 'noexpandtab'.  Then Vim
+       will use a mix of tabs and spaces, but typing <Tab> and <BS> will
+       behave like a tab appears every 4 (or 3) characters.  
+    2. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use
+       'expandtab'.  This way you will always insert spaces.  The
+       formatting will never be messed up when 'tabstop' is changed.  
+    3. Set 'tabstop' and 'shiftwidth' to whatever you prefer and use a
+       |modeline| to set these values when editing the file again.  Only
+       works when using Vim to edit the file.  
+    4. Always set 'tabstop' and 'shiftwidth' to the same value, and
+       'noexpandtab'.  This should then work (for initial indents only)
+       for any tabstop setting that people use.  It might be nice to have
+       tabs after the first non-blank inserted as spaces if you do this
+       though.  Otherwise aligned comments will be wrong when 'tabstop' is
+       changed.
 
 - `tabstop`:        number of spaces that a tab counts for (how a tab is shown)
 - `softtabstop`:    number of spaces that a tab counts for when editing (pressing <tab>) / inserts a mix of tabs and spaces
@@ -135,28 +153,38 @@ See [Vim-doc](http://vimdoc.sourceforge.net/htmldoc/usr_30.html#30.5)
 
 Convert tabs to spaces
 
-    :set expandtab
-    :retab!
+```vim
+:set expandtab
+:retab!
+```
 
 Convert spaces to tabs
 
-    :set noexpandtab
-    :retab!
+```vim
+:set noexpandtab
+:retab!
+```
 
 The option 'list' allows to visualize the tabs/spaces
 
-    :set list
+```vim
+:set list
+```
 
 We will have `^I` to indicate a tab, and `$` to mark the end of the line. `:help 'line'`
 It is possible to customize the output as, e.g., 
 
-    :set listchars=tab:▸_,eol:¬,space:·
+```vim
+:set listchars=tab:▸_,eol:¬,space:·
+```
 
 See more on `:help 'listchars'`
 It is also possible to change the colour by using
 
-    :hi NonText ctermfg=darkgrey
-    :hi SpecialKey ctermfg=darkgrey
+```vim
+:hi NonText ctermfg=darkgrey
+:hi SpecialKey ctermfg=darkgrey
+```
  
 ### Syntax highlighting
 
@@ -327,7 +355,9 @@ endfunction
 
   Compile and show result in a split screen in `.vimrc`:
 
-      map <F7> :w<enter>:tabnew<enter>:r!make<enter>
+  ```vim
+  map <F7> :w<enter>:tabnew<enter>:r!make<enter>
+  ```
 
 - Quickfix
 
@@ -351,19 +381,25 @@ endfunction
 
   Since there are some default compilation one can also
 
-      au FileType c,cpp set makeprg=make\ %:r
+  ```vim
+  au FileType c,cpp set makeprg=make\ %:r
+  ```
 
   then calling 'make' will result in either calling the Makefile OR using default
 
-      au FileType c,cpp nmap <F7> :make<CR>
+  ```vim
+  au FileType c,cpp nmap <F7> :make<CR>
+  ```
 
     
 ### Run compiled/script
   
-    au FileType c,cpp               nmap <buffer> <C-l> :!./%<<CR>
-    au FileType python,perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
-    au FileType gnuplot             nmap <buffer> <C-l> :!gnuplot %<CR>
-    au FileType octave              nmap <buffer> <C-l> :!octave %<CR>
+```vim
+au FileType c,cpp               nmap <buffer> <C-l> :!./%<<CR>
+au FileType python,perl,bash,sh nmap <buffer> <C-l> :!./%<CR>
+au FileType gnuplot             nmap <buffer> <C-l> :!gnuplot %<CR>
+au FileType octave              nmap <buffer> <C-l> :!octave %<CR>
+```
     
 For auto-executable scripts one can run
 
@@ -392,15 +428,20 @@ In .vimrc a few commands are useful, see [that reference](http://amix.dk/blog/po
 
 For taglist plugin
 
-    let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-    let Tlist_WinWidth = 50
-    map <leader>tl :TlistToggle<cr>
-    " Regenerating the current tags set
-    map <leader>tu :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+```vim
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <leader>tl :TlistToggle<cr>
+
+" Regenerating the current tags set
+map <leader>tu :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+```
 
 List matches in interactive mode
 
-    map <leader>tm [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+```vim
+map <leader>tm [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+```
 
 Some useful commands related to it
 - `:tag function`         jumps to the definition of that function
