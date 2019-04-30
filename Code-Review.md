@@ -20,17 +20,17 @@ It is then possible to call vim using
 
 to get to the main function, regardless where that function is defined!
 
-In `.vimrc` a few commands are useful (see [http://amix.dk/blog/post/19329])
+In `.vimrc` a few commands are useful (see [Ref.](http://amix.dk/blog/post/19329))
 
 ```vim
-    let Tlist_Ctags_Cmd = "/usr/bin/ctags"
-    let Tlist_WinWidth = 50
-    map <leader>tl :TlistToggle<cr>
-    " Regenerating the current tags set
-    map <leader>tu :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+let Tlist_WinWidth = 50
+map <leader>tl :TlistToggle<cr>
+" Regenerating the current tags set
+map <leader>tu :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-    " List matches in interactive mode
-    map <leader>tm [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+" List matches in interactive mode
+map <leader>tm [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
 ```
 
 Some useful commands related to it
@@ -50,7 +50,7 @@ See also [Browsing programs with tags](http://vim.wikia.com/wiki/Browsing_progra
 
 ### Browsing
 
-With current configuration, `<F9>` allows to start a file brower on the left of vim window
+With current configuration, `<F9>` allows to start a file browser on the left of vim window
 
 - `t`	  to open in a new tab
 - `P`	  to open in a previous panel
@@ -77,10 +77,10 @@ With current configuration, `<F9>` allows to start a file brower on the left of 
 ### marking points
 
 - `ma`	    marks a point `a`
-- `\`a`	    jumps to point `a`
+- `` `a``	    jumps to point `a`
 - `:marks` shows the list of marks
 
-See also [Various Commands](Various-Commands)
+See also [Various Commands](Various-Commands#marks)
     
 ### folding
 
@@ -110,15 +110,15 @@ with simple help provided in `man cscope` or `cscope --help`.
 
 One gets:
 
-> Find this C symbol:
-  Find this global definition:
-  Find functions called by this function:
-  Find functions calling this function:
-  Find this text string:
-  Change this text string:
-  Find this egrep pattern:
-  Find this file:
-  Find files #including this file:
+> Find this C symbol:  
+  Find this global definition:  
+  Find functions called by this function:  
+  Find functions calling this function:  
+  Find this text string:  
+  Change this text string:  
+  Find this egrep pattern:  
+  Find this file:  
+  Find files #including this file:  
   Find assignments to this symbol:
   
 We can enter the function/symbol in the appropriate line (using arrows) and then press `<enter>`.
@@ -128,10 +128,12 @@ To leave, one needs to use `<C-d>`.
 
 One can navigate more rapidly using a database. This could be done using the following commands
 
-    $ find /path/project/dir -name '*.[ch]' -print > /path/project/dir/cscope.files
-    $ cscope -b -q
+```bash
+$ find /path/project/dir -name '*.[ch]' -print > /path/project/dir/cscope.files
+$ cscope -b -q
+```
     
-And then run cscope again will provide faster results.
+And then run `cscope` again will provide faster results.
 
 See also: [cscope](https://vim.fandom.com/wiki/Cscope).
 
@@ -153,21 +155,23 @@ Example usage (see also above)
 
 - Generate the databases
 
-    $ find /dir -name '*.[ch]' -print > cscope.files
-    $ cscope -b
-    $ ctags -L cscope.files -R -h="h.c.cu" --c-kinds=+p --if0=yes --totals=yes -f tags
+  ```bash
+  $ find /dir -name '*.[ch]' -print > cscope.files
+  $ cscope -b
+  $ ctags -L cscope.files -R -h="h.c.cu" --c-kinds=+p --if0=yes --totals=yes -f tags
+  ```
     
 - Usage: some useful commands
 
-    `<C-\>s`    shows the list of usage of a given symbol
-         `c`    Find functions calling this function
-         `g`    Find this definition
-         `d`    Find functions called by this function
-         `t`    Find this text string
-         `e`    Find this egrep pattern
-         `f`    Find this file
-         `i`    Find files #including this file
-    `<C-t>`     jumps back
+  - `<C-\>s`    shows the list of usage of a given symbol
+  - `<C-\>c`    Find functions calling this function
+  - `<C-\>g`    Find this definition
+  - `<C-\>d`    Find functions called by this function
+  - `<C-\>t`    Find this text string
+  - `<C-\>e`    Find this egrep pattern
+  - `<C-\>f`    Find this file
+  - `<C-\>i`    Find files #including this file
+  - `<C-t>`     jumps back
     
 - Keep DB up to date
 
@@ -177,7 +181,9 @@ Example usage (see also above)
 
 We can configure the following command
 
-     <C-d> ::exec("tselect ".expand("<cword>"))<CR>
+```vim
+<C-d> ::exec("tselect ".expand("<cword>"))<CR>
+```
 
 which allows to search the current word's definition.
 
