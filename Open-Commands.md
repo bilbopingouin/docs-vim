@@ -10,6 +10,8 @@ Ignoring the configuration
 
     vim -d file1 file2
 
+See also [Diff in Various-Commands](Various-Commands#diff).
+
 ### RO
 
     vim -R file # opens in read only still modifiable
