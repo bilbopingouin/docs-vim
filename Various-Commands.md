@@ -82,13 +82,16 @@ for git mergetools
 
 Check the diff of two currently opened files
 
-- `:windo :diffthis`		runs the diff of the two currently opened files (if, e.g. opened with a split)
+- `:windo :diffthis`		runs the diff of the two (or more) currently opened files (if, e.g. opened with a split)
 - `:diffsplit Filename`		opens Filename and diff it with current buffer
 - `:vert diffplit Filename`	same as above but vertical split
 - `:diffpatch Patch-name`	opens the patch, apply it to the current buffer and opens it for diffing
 - `:vert diffpatch Patch-name`	same as above, but vertical split
     
-See also [diffpatch using the output of git diff directly](https://vi.stackexchange.com/questions/17117/diffpatch-using-the-output-of-git-diff-directly)
+See also:
+- [diffpatch using the output of git diff directly](https://vi.stackexchange.com/questions/17117/diffpatch-using-the-output-of-git-diff-directly)
+- [Help on vim-diff](http://vimdoc.sourceforge.net/htmldoc/diff.html)
+- [Fugitive](Plugins#fugitive)
  
 ### select mode
 
