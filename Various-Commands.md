@@ -293,4 +293,19 @@ Sorting lines, visual select a few lines and then
 
 More on `:help :sort`
 
+### Easter eggs
 
+Some Easter Eggs have been hidden
+
+```vim
+:help 42
+:help holy-grail
+:help!
+:help map-modes "see comment below the table about :nunmap
+:help UserGettingBored
+:help spoon
+:help showmatch (read the note)
+:Ni!
+:help bar
+:smile
+```
