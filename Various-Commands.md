@@ -6,32 +6,40 @@ Bookmarking a position in a file
 
 Set a mark
 
-    ma      " sets mark 'a'
-    :ma[rk] a
-    :ka
+```vim
+ma      " sets mark 'a'
+:ma[rk] a
+:ka
+```
     
 Jump to mark
 
-    `a      " jumps to mark 'a'. Jumps to the specified location. Mostion is exclusive.
-    'a      " jumps to mark 'a'. Jumps to the first non-blank character of that line.
-    g'a     " jumps to mark 'a'. Does not change the jumplist
-    g`a     " same as above
+```vim
+`a      " jumps to mark 'a'. Jumps to the specified location. Mostion is exclusive.
+'a      " jumps to mark 'a'. Jumps to the first non-blank character of that line.
+g'a     " jumps to mark 'a'. Does not change the jumplist
+g`a     " same as above
+```
     
 List currently defined marks
 
-    :marks  " list marks
+```vim
+:marks  " list marks
+```
     
 Delete marks
 
-    :delm[arks] a       delete mark 'a'
-    :delm[arks]!        delete all marks (not A-Z 0-9)
+```vim
+:delm[arks] a       delete mark 'a'
+:delm[arks]!        delete all marks (not A-Z 0-9)
+```
     
 Special marks
 
 - `[ `or `]`    useful for multiple commands simulated operators: first or last characters of the previously 
     changed or yanked text
 - `<` or `>`    useful for gv: first and last characters of the previously visually selected text
-- `'` or `\``    previous context mark (use `''` or `\`\``): position before the lastest jump
+- `'` or `` ` ``    previous context mark (use `''` or `` ` ` ``): position before the latest jump
 - `"`           position where last exiting the buffer
 - `^`           position of the last insert
 - `.`           position where the last change was made
@@ -62,11 +70,15 @@ More on [wikia](http://vim.wikia.com/wiki/Folding).
 
 Start diff
 
-    vim -d file1 file2 [...]
+```bash
+vim -d file1 file2 [...]
+```
 
 Update comparison within vim session
 
-    :diffu[pdate]
+```vim
+:diffu[pdate]
+```
 
 Some commands
 
@@ -74,7 +86,7 @@ Some commands
 - `do`         diff get (modify current file)
 - `dp`         diffput (modify other file)
 
-for git mergetools
+for `git mergetools`
 
 - `:diffget RE` take it from remote
 - `:diffget BA` take it from BASE
@@ -106,15 +118,21 @@ select is similar to visual but with some differences: writing overwrites select
 
 direct command:
 
-    u   " undo previous
+```vim
+u   " undo previous
+```
 
 interesting to map
 
-    imap <C-z> <C-O>u " C-z in insert mode undo previous
+```vim
+imap <C-z> <C-O>u " C-z in insert mode undo previous
+```
 
 redo
 
-    <C-r>
+```vim
+<C-r>
+```
 
 But undo can be more advanced, with branches:
 
@@ -177,7 +195,9 @@ A special register is `=` which allows you to type in a command in insert mode t
 
 list and see content of all registers
 
-    :reg
+```vim
+:reg[isters]
+```
 
 The following registers have actions on copy-paste with the rest of the system (clipboard)
 if vim has been compiled with `+clipboard`: `*` and `+` registers.
@@ -215,12 +235,16 @@ If one wants to close the current buffer (e.g. to open it somewhere else) withou
 
 Examples
 
-    :args *.gp
-    :tab all
+```vim
+:args *.gp
+:tab all
+```
 
 this is an alternative to
 
-    $ vim -p *.gp
+```bash
+$ vim -p *.gp
+```
 
 which work from within vim itself. Interestingly when calling that function the argument list is filled with all the gp files opens all the gp file in the directory. It replaces the currently opened tabs.
 
@@ -234,11 +258,15 @@ See also [Opening files](Open-Commands)
   
 Activate spell checking
 
-    :setlocal spell spelllang=en_gb
+```vim
+:setlocal spell spelllang=en_gb
+```
 
 Deactivate
 
-    :setlocal nospell
+```vim
+:setlocal nospell
+```
 
 Some commands
 
@@ -258,15 +286,21 @@ See also [External Commands](External-Commands)
   
 Switch to visual mode
 
-  v
+```vim
+v
+```
 
 Select word with arrows and then yank it
 
-  y
+```vim
+y
+```
 
 In command write
 
-  :<C-r>"
+```vim
+:<C-r>"
+```
 
 pastes the selected word
     
@@ -274,22 +308,30 @@ pastes the selected word
   
 Display last commands
 
-    q:
+```vim
+q:
+```
 
 Display last searches
 
-    q/
+```vim
+q/
+```
 
-Then one can select, and edit the commands. Run them using <enter>, close using :q
+Then one can select, and edit the commands. Run them using `<enter>`, close using `:q`
 When entering a command, it is possible to enter the command window with
 
-    <C-f>
+```vim
+<C-f>
+```
         
 ### Sorting
   
 Sorting lines, visual select a few lines and then
 
-    :sort
+```vim
+:sort
+```
 
 More on `:help :sort`
 
