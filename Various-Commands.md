@@ -282,27 +282,42 @@ See also [External Commands](External-Commands)
 
 `g <C-g>` gives the number of words and characters on a visually selected text.
 
-### Copy-paste in command
+### Copy-paste
   
-Switch to visual mode
+- In command
 
-```vim
-v
-```
+  Switch to visual mode
 
-Select word with arrows and then yank it
+  ```vim
+  v
+  ```
 
-```vim
-y
-```
+  Select word with arrows and then yank it
 
-In command write
+  ```vim
+  y
+  ```
 
-```vim
-:<C-r>"
-```
+  In command write
 
-pastes the selected word
+  ```vim
+  :<C-r>"
+  ```
+
+  pastes the selected text
+
+- Copy a single word and paste it on top of another one
+
+  Copy a single word
+  ```vim
+  yiw
+  ```
+  Select the word to replace and paste over (`p`)
+  ```vim
+  viwp
+  ```
+
+  See also [Replace a word with yanked text](https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text).
     
 ### Recall and edit previous commands/searches
   
