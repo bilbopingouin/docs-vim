@@ -15,7 +15,7 @@ ma      " sets mark 'a'
 Jump to mark
 
 ```vim
-`a      " jumps to mark 'a'. Jumps to the specified location. Mostion is exclusive.
+`a      " jumps to mark 'a'. Jumps to the specified location. Motion is exclusive.
 'a      " jumps to mark 'a'. Jumps to the first non-blank character of that line.
 g'a     " jumps to mark 'a'. Does not change the jumplist
 g`a     " same as above
