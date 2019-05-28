@@ -1,28 +1,48 @@
 # Plugins
 
-### Twitvim configuration commands
+### Table of Content
 
-    let twitvim_browser_cmd = 'iceweasel'let twitvim_count = 50
 
+<!-- vim-markdown-toc GFM -->
+
+* [List of notable plugins](#list-of-notable-plugins)
+* [Twitvim configuration commands](#twitvim-configuration-commands)
+* [vim-surround](#vim-surround)
+* [echofunc](#echofunc)
+* [vim-games](#vim-games)
+* [Plugins managers](#plugins-managers)
+	* [Pathogen](#pathogen)
+	* [Vundle](#vundle)
+	* [vim-plug](#vim-plug)
+* [Fugitive](#fugitive)
+* [Alignments](#alignments)
+
+<!-- vim-markdown-toc -->
 
 ### List of notable plugins
   
-- *alternate*: allows easy switch between .c and .h files
-- *cvim*: adds a lot of functionalities to vim for C/C++ development. It tends to be a bit too intrusive when not working with C
-- *DrawIt*: allows to draw diagrams within vim
-- *echofunc*: together with tags, it allows to echo the function declaration in C/C++. (§)
-- *fugitive*: a few commands for git, like adding the branch name in the vim status bar. (§)
-- *recover*: adds an option "Compare" when recovering from a swap file
-- *solarized*: colorscheme for vim. (§)
-- *ttagecho*: similar to echofunc.
-- *twitvim*: allows to interact with the twitter API from within vim. 
-- *undotree*: allows a graphical visualisation of the undo history (useful when using a combination or undo/redo together with branches). (§)
-- *vim-games*: 4 games in one. (§)
-- *vim-surround*: allows to surround words or sentences with signs and/or tags as well as edit them. Great for HTML/XML things. (§)
-- *vim-latex*: transforms vim into a LaTeX IDE. As for cvim, it might be considered too intrusive, namely defining too many things, making it unpracticable when editing other types of documents.
+- *alternate*: allows easy switch between .c and .h files: see also [Alternate Files Quickly](https://www.vim.org/scripts/script.php?script_id=31),
+- *cvim*: adds a lot of functionalities to vim for C/C++ development. It tends to be a bit too intrusive when not working with C, see also [C/C++ IDE](https://www.vim.org/scripts/script.php?script_id=213),
+- *DrawIt*: allows to draw diagrams within vim, see also [DrawIt!](https://www.vim.org/scripts/script.php?script_id=40),
+- *echofunc*: together with tags, it allows to echo the function declaration in C/C++. See also [Echo the function declaration](https://www.vim.org/scripts/script.php?script_id=1735), (§)
+- *fugitive*: a few commands for git, like adding the branch name in the vim status bar. See also [A Git Wraper](https://www.vim.org/scripts/script.php?script_id=2975), (§)
+- *recover*: adds an option "Compare" when recovering from a swap file, see also [Show differences between recovered files](https://www.vim.org/scripts/script.php?script_id=3068),
+- *solarized*: colorscheme for vim. See also [Solarized colorscheme](https://www.vim.org/scripts/script.php?script_id=3520), (§)
+- *ttagecho*: similar to echofunc. See also [Tag information](https://www.vim.org/scripts/script.php?script_id=2055),
+- *twitvim*: allows to interact with the twitter API from within vim. See also [Twitter client](https://www.vim.org/scripts/script.php?script_id=2204),
+- *undotree*: allows a graphical visualisation of the undo history (useful when using a combination or undo/redo together with branches). See also [Display your undo history in a graph](https://www.vim.org/scripts/script.php?script_id=4177), (§)
+- *vim-games*: 4 games in one. See also [ViM Games](https://github.com/jmanoel7/vim-games), (§)
+- *vim-surround*: allows to surround words or sentences with signs and/or tags as well as edit them. Great for HTML/XML things. See also [Surround.vim](https://www.vim.org/scripts/script.php?script_id=1697), (§)
+- *vim-latex*: transforms vim into a LaTeX IDE. As for cvim, it might be considered too intrusive, namely defining too many things, making it unpracticable when editing other types of documents. See also [LaTeX Suite](https://www.vim.org/scripts/script.php?script_id=475).
   
 § currently loaded
   
+### Twitvim configuration commands
+
+```vim
+let twitvim_browser_cmd = 'iceweasel'let twitvim_count = 50
+```
+
 ### vim-surround
 
 Some commands
@@ -83,21 +103,84 @@ contains
         
 `:Sokoban` starts it
 
-### pathogen
+### Plugins managers
+
+See, for example, 
+- [What is the difference between the vim plugin managers?](https://vi.stackexchange.com/questions/388/what-is-the-difference-between-the-vim-plugin-managers)
+- [Best plugin managers for vim](https://www.slant.co/topics/1224/~best-plugin-managers-for-vim)
+- [Plugins Managers](https://vim.fandom.com/wiki/Plugin-manager)
+
+
+#### Pathogen
   
-Allows to keep plugins each in its separate directory.
+Allows to keep plugins each in its separate directory. Handle the `runtimepath`
 
 See also [script](https://www.vim.org/scripts/script.php?script_id=2332)
 
 Install
 
-    cp pathogen.vim .vim/autoload/
+```bash
+cp pathogen.vim .vim/autoload/
+```
 
-Config (in .vimrc, at the top, add)
+Config (in `.vimrc`, at the top, add)
 
-    call pathogen#runtime_append_all_bundles()
-    call pathogen#helptags()
-        
+```vim
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+```
+
+#### Vundle
+
+Complex plugin manager. Somewhat comparable to `apt`.
+
+Install
+
+```bash
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+Configure your `.vimrc` as 
+
+```vim
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" more Plugin commands
+" ...
+call vundle#end()            " required
+filetype plugin indent on    " required
+```
+
+#### vim-plug
+
+Lightweight alternative to Vundle.
+
+Install
+
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Configure your `.vimrc` as
+
+```vim
+call plug#begin()
+Plug 'tpope/vim-sensible'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
+```
+
 ### Fugitive
 
 References
@@ -107,36 +190,48 @@ References
 
 General git command
 
-    :Git
+```vim
+:Git
+```
 
 For example
 
-    :Git log
-    :Git tree           Using the .gitconfig alias
+```vim
+:Git log
+:Git tree           " Using the .gitconfig alias
+```
 
 Help
 
-    :help fugitive-commands
+```vim
+:help fugitive-commands
+```
 
 Combining with vim
 
-    :Git add %
-    :Git rm %
-    :Git mv % new-name
-    :Git checkout %
+```vim
+:Git add %
+:Git rm %
+:Git mv % new-name
+:Git checkout %
+```
 
 But fugitive has specific commands for those
 
-    :Gwrite
-    :Gremove
-    :Gmove new-name
-    :Gread
+```vim
+:Gwrite
+:Gremove
+:Gmove new-name
+:Gread
+```
 
 and those are slightly more advanced (buffer cleanup and/or reopening, etc.)
 Note that path are either relative to the current directory or the root of the git repo
 
-    :Gmove ../npath/nname
-    :Gmove /npath/nname
+```vim
+:Gmove ../npath/nname
+:Gmove /npath/nname
+```
 
 Other commands
 
@@ -195,80 +290,80 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
   
 - Own implementation (aka not plugin)
 
-```vim
-" http://www.ibm.com/developerworks/library/l-vim-script-2/index.html
-function! AlignAssignments ()
-    "Patterns needed to locate assignment operators...
-    let ASSIGN_OP   = '[-+*/%|&]\?=\@<!=[=~]\@!'
-    let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)'
+  ```vim
+  " http://www.ibm.com/developerworks/library/l-vim-script-2/index.html
+  function! AlignAssignments ()
+      "Patterns needed to locate assignment operators...
+      let ASSIGN_OP   = '[-+*/%|&]\?=\@<!=[=~]\@!'
+      let ASSIGN_LINE = '^\(.\{-}\)\s*\(' . ASSIGN_OP . '\)'
 
-    "Locate block of code to be considered (same indentation, no blanks)
-    let indent_pat = '^' . matchstr(getline('.'), '^\s*') . '\S'
-    let firstline  = search('^\%('. indent_pat . '\)\@!','bnW') + 1
-    let lastline   = search('^\%('. indent_pat . '\)\@!', 'nW') - 1
-    if lastline < 0
-        let lastline = line('$')
-    endif
+      "Locate block of code to be considered (same indentation, no blanks)
+      let indent_pat = '^' . matchstr(getline('.'), '^\s*') . '\S'
+      let firstline  = search('^\%('. indent_pat . '\)\@!','bnW') + 1
+      let lastline   = search('^\%('. indent_pat . '\)\@!', 'nW') - 1
+      if lastline < 0
+	  let lastline = line('$')
+      endif
 
-    "Find the column at which the operators should be aligned...
-    let max_align_col = 0
-    let max_op_width  = 0
-    for linetext in getline(firstline, lastline)
-        "Does this line have an assignment in it?
-        let left_width = match(linetext, '\s*' . ASSIGN_OP)
-    
-        "If so, track the maximal assignment column and operator width...
-        if left_width >= 0
-            let max_align_col = max([max_align_col, left_width])
+      "Find the column at which the operators should be aligned...
+      let max_align_col = 0
+      let max_op_width  = 0
+      for linetext in getline(firstline, lastline)
+	  "Does this line have an assignment in it?
+	  let left_width = match(linetext, '\s*' . ASSIGN_OP)
+      
+	  "If so, track the maximal assignment column and operator width...
+	  if left_width >= 0
+	      let max_align_col = max([max_align_col, left_width])
 
-	    let op_width      = strlen(matchstr(linetext, ASSIGN_OP))
-	    let max_op_width  = max([max_op_width, op_width+1])
-	endif
-    endfor
+	      let op_width      = strlen(matchstr(linetext, ASSIGN_OP))
+	      let max_op_width  = max([max_op_width, op_width+1])
+	  endif
+      endfor
 
-    "Code needed to reformat lines so as to align operators...
-    let FORMATTER = '\=printf("%-*s%*s", max_align_col, submatch(1),
-    \                                    max_op_width,  submatch(2))'
+      "Code needed to reformat lines so as to align operators...
+      let FORMATTER = '\=printf("%-*s%*s", max_align_col, submatch(1),
+      \                                    max_op_width,  submatch(2))'
 
-    " Reformat lines with operators aligned in the appropriate column...
-    for linenum in range(firstline, lastline)
-        let oldline = getline(linenum)
-        let newline = substitute(oldline, ASSIGN_LINE, FORMATTER, "")
-        call setline(linenum, newline)
-    endfor
-endfunction
+      " Reformat lines with operators aligned in the appropriate column...
+      for linenum in range(firstline, lastline)
+	  let oldline = getline(linenum)
+	  let newline = substitute(oldline, ASSIGN_LINE, FORMATTER, "")
+	  call setline(linenum, newline)
+      endfor
+  endfunction
 
-nmap <silent>  ;=  :call AlignAssignments()<CR>
-```
+  nmap <silent>  ;=  :call AlignAssignments()<CR>
+  ```
 
-turns
+  turns
 
-    a = 1;
-    b2 = 3;
+      a = 1;
+      b2 = 3;
 
-into
+  into
 
-    a  = 1;
-    b2 = 3;
+      a  = 1;
+      b2 = 3;
     
 - Align / AlignMaps
 
-[Ref. vim.org](https://www.vim.org/scripts/script.php?script%5Fid=294)
+  [Ref. vim.org](https://www.vim.org/scripts/script.php?script%5Fid=294)
     
-There are many commands like
+  There are many commands like
 
-- `:[range]Align =`         Align on the = signs
-- `:[range]Align =*+-`      Align on the * + or - signs
+  - `:[range]Align =`         Align on the = signs
+  - `:[range]Align =*+-`      Align on the * + or - signs
 	
-And some shortcuts, usually `<leader>t` followed by
+  And some shortcuts, usually `<leader>t` followed by
 
-- `=`           Align assigments
-- `,`           Align on commas
-- `sp`          Align on spaces
-- `t`           Align on tabs
+  - `=`           Align assigments
+  - `,`           Align on commas
+  - `sp`          Align on spaces
+  - `t`           Align on tabs
 
-Some other use `<leader>a` followed by
+  Some other use `<leader>a` followed by
 
-- `com`         C-comments
-- `dec`         C functions declarations (parameters)
+  - `com`         C-comments
+  - `dec`         C functions declarations (parameters)
 
