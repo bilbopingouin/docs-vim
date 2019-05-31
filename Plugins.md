@@ -14,6 +14,7 @@
 	* [Pathogen](#pathogen)
 	* [Vundle](#vundle)
 	* [vim-plug](#vim-plug)
+	* [Vim-Packages](#vim-packages)
 * [Fugitive](#fugitive)
 * [Alignments](#alignments)
 
@@ -33,7 +34,8 @@
 - *undotree*: allows a graphical visualisation of the undo history (useful when using a combination or undo/redo together with branches). See also [Display your undo history in a graph](https://www.vim.org/scripts/script.php?script_id=4177), (§)
 - *vim-games*: 4 games in one. See also [ViM Games](https://github.com/jmanoel7/vim-games), (§)
 - *vim-surround*: allows to surround words or sentences with signs and/or tags as well as edit them. Great for HTML/XML things. See also [Surround.vim](https://www.vim.org/scripts/script.php?script_id=1697), (§)
-- *vim-latex*: transforms vim into a LaTeX IDE. As for cvim, it might be considered too intrusive, namely defining too many things, making it unpracticable when editing other types of documents. See also [LaTeX Suite](https://www.vim.org/scripts/script.php?script_id=475).
+- *vim-latex*: transforms vim into a LaTeX IDE. As for cvim, it might be considered too intrusive, namely defining too many things, making it unpracticable when editing other types of documents. See also [LaTeX Suite](https://www.vim.org/scripts/script.php?script_id=475),
+- *vim-sensible*: a list of basic commands and configuration that many agree on. See also [Vim Sensible](http://www.github.com/tpope/vim-sensible).
   
 § currently loaded
   
@@ -180,6 +182,31 @@ Plug 'tpope/vim-sensible'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 call plug#end()
 ```
+
+#### Vim-Packages
+
+Starting from vim 8, vim includes a packages handling, which allows some control over plugins. The idea is to have a structure like
+
+    .vim/plugins/
+		 start/
+		       plug1/
+			     plugin/plug1.vim
+		       plug2/
+			     plugin/plug2.vim
+			     syntax/plug2.vim
+		 opt/
+		       plug3/
+			     plugin/plug2.vim
+
+All the plugins in the `start` folder will always be loaded, whereas the `opt` folder ones will be only loaded on demand (using `packadd`).
+
+See also
+- Inline help
+
+  ```vim
+  :help packages
+  ```
+- [What is the Vim8 packages features](https://vi.stackexchange.com/questions/9522/what-is-the-vim8-package-feature-and-how-should-i-use-it?noredirect=1&lq=1)
 
 ### Fugitive
 
