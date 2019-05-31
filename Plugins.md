@@ -42,7 +42,8 @@
 ### Twitvim configuration commands
 
 ```vim
-let twitvim_browser_cmd = 'iceweasel'let twitvim_count = 50
+let twitvim_browser_cmd = 'iceweasel'
+let twitvim_count = 50
 ```
 
 ### vim-surround
@@ -77,7 +78,7 @@ run
 
     ctags -R --fields=+ilmS
     
-when entering a function, and typing the `(,` the function declaration will be shown
+when entering a function, and typing the `(`, the function declaration will be shown
   
 See also [script](http://www.vim.org/scripts/script.php?script_id=1735)
   
