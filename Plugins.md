@@ -17,11 +17,13 @@
 	* [Vim-Packages](#vim-packages)
 * [Fugitive](#fugitive)
 * [Alignments](#alignments)
+* [ALE](#ale)
 
 <!-- vim-markdown-toc -->
 
 ### List of notable plugins
   
+- *ale*: allows to automatically check the syntax of the code file. See [ALE](https://github.com/w0rp/ale),
 - *alternate*: allows easy switch between .c and .h files: see also [Alternate Files Quickly](https://www.vim.org/scripts/script.php?script_id=31),
 - *cvim*: adds a lot of functionalities to vim for C/C++ development. It tends to be a bit too intrusive when not working with C, see also [C/C++ IDE](https://www.vim.org/scripts/script.php?script_id=213),
 - *DrawIt*: allows to draw diagrams within vim, see also [DrawIt!](https://www.vim.org/scripts/script.php?script_id=40),
@@ -401,4 +403,29 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
 
   - `com`         C-comments
   - `dec`         C functions declarations (parameters)
+
+### ALE
+
+Once installed, one can see the current configuration running
+
+```vim
+:ALEInfo
+```
+
+Some configuration can make the life easier. In particular, when one wants to limit to the `clang-tidy` checks, one can use
+
+```vim
+" Only run checks when saving
+let g:ale_lint_on_text_changed = 'never'
+
+" List of linters
+let g:ale_linters = {'c': ['clangtidy'], 'cpp': ['clangtidy']} 
+```
+
+For more complex code, one can use `compile_commands.json` files to indicate to `clang-tidy` where to find all the headers, and other various compiler flags. But a simpler way, could be to use
+
+```vim
+:let g:ale_c_clangtidy_options = '-- -I04_Libs/TargetLib_E4/03_Sources/modules/ -I04_Libs/TargetLib_E4/03_Sources/Headers -I03_Sources/Headers -I04_Libs/TargetLib_E4/03_Sources/Headers/Init -DTARGET_5924C005_Master'
+```
+
 
