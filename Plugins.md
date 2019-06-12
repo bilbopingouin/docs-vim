@@ -390,6 +390,13 @@ autocmd BufReadPost fugitive://* set bufhidden=delete
   - `sp`          Align on spaces
   - `t`           Align on tabs
 
+  One can use also more advanced commands like
+
+  ```vim
+  :[range]Align! p1P2 "word"
+  ```
+  where the word is aligned, leaving 1 space before (`p1`) and 2 spaces after (`P2`).
+
   Some other use `<leader>a` followed by
 
   - `com`         C-comments
