@@ -103,3 +103,21 @@ function! Deu2utf()
 
 endfunction
 ```
+
+### File format
+
+A file can be saved in various format, for example in dos (with <CR>+<LF>) or unix format. The format from the current file can be set as
+
+```vim
+set ff=dos
+```
+
+But the file could also be reopened setting the right format as
+
+```vim
+:e ++ff=unix
+```
+
+See also:
+- [See line breaks and carriage returns in editor](https://stackoverflow.com/q/3860519/3337196)
+- [Convert DOS line endings to Linux line endings in vim](https://stackoverflow.com/q/82726/3337196)
