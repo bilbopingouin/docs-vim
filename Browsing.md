@@ -12,6 +12,7 @@ A few commands are worth remembering:
 - `mx` - execute a command on all selected files
 - `d` - creates a new directory
 - `D` - deletes a file
+- `c` - change current directory (useful to create a new file/directory)
 - `o` or `v` or `p` allows to open the file in a split window (`p` opens RO)
 - `t` open the file in a new tab (`T` does it in the background)
 - `i` change view: vertical / long / horizontal / tree (note that opening files and tree view is not optimum)
