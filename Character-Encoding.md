@@ -121,3 +121,33 @@ But the file could also be reopened setting the right format as
 See also:
 - [See line breaks and carriage returns in editor](https://stackoverflow.com/q/3860519/3337196)
 - [Convert DOS line endings to Linux line endings in vim](https://stackoverflow.com/q/82726/3337196)
+
+### Digraphs
+
+Some characters that cannot usually be entered by a normal keyboard are defined. It can be used in insert mode with, e.g.
+
+```vim
+<C-k>BB
+```
+
+Alternatively, one can use 
+
+```vim
+:set digraph
+i
+B<BS>B
+```
+
+Both method would produce the character: `¦`. 
+
+A list of such characters have already been defined and can be seen using
+
+```vim
+:dig[raph]
+```
+
+See also 
+
+```vim
+:help digraph
+```
