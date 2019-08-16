@@ -6,22 +6,36 @@ Some configuration that makes searching nice
 
 Search ignoring case
 
-    :se ignorecase
+```vim
+:set ignorecase
+```
 
 normally ignore the case when searching or by replace
 
-    :se smartcase
+```vim
+:set smartcase
+```
 
-overrides ignorecase if search pattern contains uppercase:
+overrides `ignorecase` if search pattern contains uppercase:
 - to search all case: use only lower case in search
 - otherwise will match the case
+
+Another interesting configuration is the 
+
+```vim
+:set incsearch
+```
+
+which allows to search the next instance while typing.
 
 ### Hightlight
 
 Highlighting search matches
 
-    :se hlsearch                             " Highlight search
-    :hi search guibg=LightGreen ctermbg=10   " Change color of highlight
+```vim
+:se hlsearch                             " Highlight search
+:hi search guibg=LightGreen ctermbg=10   " Change color of highlight
+```
 
 Some commands that can be useful:
 
@@ -83,8 +97,33 @@ A few searches commands
 - `?` backward search
 - `*` search current word (under cursor)
 - `#` same as `*` but backward
+- `g#` and `g*` like their respective commands (without `g`) but does not require an exact match.
 - `:lvimgrep /pattern/j **/*` search recursively for pattern w/o jumping to the first occurence `:lw` shows the results and `:lcl` hide the results
 - `:vimgrepa[dd] /pattern/j **` same as before, but store results in quickfix file: `:copen` to show and `:ccl[ose]` to close. This allows for direct navigation.
+- `n` next occurrence
+- `N` previous occurrence
+
+Next and previous depends on the search direction.
+
+It is also possible to reuse directly a search pattern, for example
+
+```vim
+/foo
+:s//bar/g
+```
+
+would replace all instances of `foo` to `bar`.
+
+Similarly to substitute (`:s`), the global command (`:g`) can also reuse the previous search pattern. In particular
+
+```vim
+:g/
+```
+
+lists all lines containing the search pattern.
+
+See also [Searching tips](https://vim.fandom.com/wiki/Searching)
+
 
 ### Search across buffers
 
