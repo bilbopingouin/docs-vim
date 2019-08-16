@@ -1,5 +1,54 @@
 # Search Commands
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Commands](#commands)
+* [Configurations](#configurations)
+* [Hightlight](#hightlight)
+* [Highlight like a search without jumping](#highlight-like-a-search-without-jumping)
+* [Visual selection](#visual-selection)
+* [Search across buffers](#search-across-buffers)
+
+<!-- vim-markdown-toc -->
+
+### Commands
+
+A few searches commands
+
+- `gd` looks for the definition of a variable (first occurence within a file)
+- `/` normal search
+- `?` backward search
+- `*` search current word (under cursor)
+- `#` same as `*` but backward
+- `g#` and `g*` like their respective commands (without `g`) but does not require an exact match.
+- `:lvimgrep /pattern/j **/*` search recursively for pattern w/o jumping to the first occurence `:lw` shows the results and `:lcl` hide the results
+- `:vimgrepa[dd] /pattern/j **` same as before, but store results in quickfix file: `:copen` to show and `:ccl[ose]` to close. This allows for direct navigation.
+- `n` next occurrence
+- `N` previous occurrence
+
+Next and previous depends on the search direction.
+
+It is also possible to reuse directly a search pattern, for example
+
+```vim
+/foo
+:s//bar/g
+```
+
+would replace all instances of `foo` to `bar`.
+
+Similarly to substitute (`:s`), the global command (`:g`) can also reuse the previous search pattern. In particular
+
+```vim
+:g/
+```
+
+lists all lines containing the search pattern.
+
+See also [Searching tips](https://vim.fandom.com/wiki/Searching)
+
+
 ### Configurations
 
 Some configuration that makes searching nice
@@ -46,18 +95,6 @@ Some commands that can be useful:
 ```
 
 
-
-### Visual selection
-
-Search visually selected text
-
-```vim
-:vmap * y/<C-R>"<CR>
-:vmap # y?<C-R>"<CR>
-```
-
-
-
 ### Highlight like a search without jumping
 
 `F8` to do like `*` but without moving to the next occurence
@@ -88,42 +125,14 @@ endfunction
 
 But this does not seem to work...
 
-### Commands
+### Visual selection
 
-A few searches commands
-
-- `gd` looks for the definition of a variable (first occurence within a file)
-- `/` normal search
-- `?` backward search
-- `*` search current word (under cursor)
-- `#` same as `*` but backward
-- `g#` and `g*` like their respective commands (without `g`) but does not require an exact match.
-- `:lvimgrep /pattern/j **/*` search recursively for pattern w/o jumping to the first occurence `:lw` shows the results and `:lcl` hide the results
-- `:vimgrepa[dd] /pattern/j **` same as before, but store results in quickfix file: `:copen` to show and `:ccl[ose]` to close. This allows for direct navigation.
-- `n` next occurrence
-- `N` previous occurrence
-
-Next and previous depends on the search direction.
-
-It is also possible to reuse directly a search pattern, for example
+Search visually selected text
 
 ```vim
-/foo
-:s//bar/g
+:vmap * y/<C-R>"<CR>
+:vmap # y?<C-R>"<CR>
 ```
-
-would replace all instances of `foo` to `bar`.
-
-Similarly to substitute (`:s`), the global command (`:g`) can also reuse the previous search pattern. In particular
-
-```vim
-:g/
-```
-
-lists all lines containing the search pattern.
-
-See also [Searching tips](https://vim.fandom.com/wiki/Searching)
-
 
 ### Search across buffers
 
