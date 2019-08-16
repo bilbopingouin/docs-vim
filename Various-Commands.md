@@ -1,5 +1,26 @@
 # Various Commands
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [marks](#marks)
+* [fold](#fold)
+* [diff](#diff)
+* [select mode](#select-mode)
+* [undo](#undo)
+* [registers](#registers)
+* [Jumps](#jumps)
+* [closing files](#closing-files)
+* [arguments list](#arguments-list)
+* [spell-checking](#spell-checking)
+* [count characters](#count-characters)
+* [Copy-paste](#copy-paste)
+* [Recall and edit previous commands/searches](#recall-and-edit-previous-commandssearches)
+* [Sorting](#sorting)
+* [Easter eggs](#easter-eggs)
+
+<!-- vim-markdown-toc -->
+
 ### marks
 
 Bookmarking a position in a file

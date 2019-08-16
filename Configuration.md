@@ -1,5 +1,18 @@
 # Configuration
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Leader character](#leader-character)
+* [Print last command at the bottom line](#print-last-command-at-the-bottom-line)
+* [Status line](#status-line)
+* [Cursor](#cursor)
+* [backspace](#backspace)
+* [Line break on the right of screens.](#line-break-on-the-right-of-screens)
+* [Indentation](#indentation)
+
+<!-- vim-markdown-toc -->
+
 ### Leader character
 
 Leader is a character often used as a prefix for other commands.

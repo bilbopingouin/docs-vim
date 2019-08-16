@@ -1,5 +1,14 @@
 # Compiling
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Get the sources](#get-the-sources)
+* [Compiling](#compiling)
+* [Flags and options](#flags-and-options)
+
+<!-- vim-markdown-toc -->
+
 VIM is often already pre-installed on Linux systems, otherwise it is convenient to install default versions, e.g.
 
     aptitude install vim

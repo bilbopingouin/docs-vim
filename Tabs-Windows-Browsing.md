@@ -2,6 +2,19 @@
 
 Tabs is a great feature of vim! Some commands may be interesting
 
+
+<!-- vim-markdown-toc GFM -->
+
+		* [Basic](#basic)
+		* [Slightly more advanced](#slightly-more-advanced)
+		* [Move current buffer to its own tab](#move-current-buffer-to-its-own-tab)
+* [Windows browsing](#windows-browsing)
+		* [Create windows](#create-windows)
+		* [Shift windows](#shift-windows)
+		* [Move windows](#move-windows)
+
+<!-- vim-markdown-toc -->
+
 ### Basic
 
 - `:tabne[w]`

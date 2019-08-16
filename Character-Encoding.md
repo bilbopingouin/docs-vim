@@ -1,5 +1,15 @@
 # Character Encoding
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Keyboard mapping for exotic keyboards inputs](#keyboard-mapping-for-exotic-keyboards-inputs)
+* [scripts](#scripts)
+* [File format](#file-format)
+* [Digraphs](#digraphs)
+
+<!-- vim-markdown-toc -->
+
 ### Keyboard mapping for exotic keyboards inputs
 
 

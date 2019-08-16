@@ -1,5 +1,15 @@
 # External Commands
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Check spelling](#check-spelling)
+* [Calculator](#calculator)
+	* [Using python](#using-python)
+	* [Using the expression register](#using-the-expression-register)
+
+<!-- vim-markdown-toc -->
+
 ### Check spelling
 
 

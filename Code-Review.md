@@ -1,4 +1,24 @@
+# Code Review
+
 Most of those commands are already listed somewhere else, but in order to regroup them together, here we are.
+
+
+<!-- vim-markdown-toc GFM -->
+
+* [Generate tags](#generate-tags)
+* [Browsing](#browsing)
+* [File jumping](#file-jumping)
+* [Searching for the files](#searching-for-the-files)
+* [marking points](#marking-points)
+* [folding](#folding)
+* [Combining `cscope`, `ctag` and `vim`](#combining-cscope-ctag-and-vim)
+	* [cscope](#cscope)
+	* [cscope and vim](#cscope-and-vim)
+	* [ctags](#ctags)
+	* [Vim, cscope and ctags](#vim-cscope-and-ctags)
+	* [Specific configuration](#specific-configuration)
+
+<!-- vim-markdown-toc -->
 
 ### Generate tags
 

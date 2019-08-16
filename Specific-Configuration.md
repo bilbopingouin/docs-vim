@@ -1,5 +1,13 @@
 # Specific Configuration
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Incrementation C-A, C-X](#incrementation-c-a-c-x)
+* [Abreviations](#abreviations)
+
+<!-- vim-markdown-toc -->
+
 ### Incrementation C-A, C-X
 
 When incrementing, numbers starting with 0x are recognised as hexa and the ones starting with 0 as octal. Since I never work with octal numbers and that I sometimes defined decimal starting from 0, I set the formats as

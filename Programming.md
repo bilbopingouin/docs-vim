@@ -1,5 +1,20 @@
 # Programming
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [indenting](#indenting)
+* [Tab/spaces](#tabspaces)
+* [Syntax highlighting](#syntax-highlighting)
+* [un/comment in Visual](#uncomment-in-visual)
+* [C inserting](#c-inserting)
+* [Compiling](#compiling)
+* [Run compiled/script](#run-compiledscript)
+* [Switch fast between files for C/C++ code](#switch-fast-between-files-for-cc-code)
+* [Using ctags](#using-ctags)
+
+<!-- vim-markdown-toc -->
+
 ### indenting
 
 Activate indent

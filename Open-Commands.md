@@ -1,5 +1,35 @@
 # Opening Commands
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [clean state](#clean-state)
+* [diff](#diff)
+* [RO](#ro)
+* [multiple files](#multiple-files)
+* [open at a given position](#open-at-a-given-position)
+* [tags](#tags)
+* [no swap](#no-swap)
+* [easy mode](#easy-mode)
+* [encrypt mode](#encrypt-mode)
+* [recovery mode](#recovery-mode)
+* [run commands](#run-commands)
+* [create a script automatically](#create-a-script-automatically)
+* [Open file within vim](#open-file-within-vim)
+	* [Open an existing file:](#open-an-existing-file)
+	* [Create a new file/buffer:](#create-a-new-filebuffer)
+	* [Browse for an existing file to open:](#browse-for-an-existing-file-to-open)
+	* [Open a file in a new tab:](#open-a-file-in-a-new-tab)
+	* [Open a new file with an empty buffer:](#open-a-new-file-with-an-empty-buffer)
+	* [Open a new file in a new split window (horizontal)](#open-a-new-file-in-a-new-split-window-horizontal)
+	* [Open a new file in a new split window (vertical)](#open-a-new-file-in-a-new-split-window-vertical)
+	* [Open an existing file within a new split window (horizontal)](#open-an-existing-file-within-a-new-split-window-horizontal)
+	* [Open an existing file within a new split window (vertical)](#open-an-existing-file-within-a-new-split-window-vertical)
+* [Open several files each within its own tab](#open-several-files-each-within-its-own-tab)
+* [Buffer list](#buffer-list)
+
+<!-- vim-markdown-toc -->
+
 ### clean state
 
 Ignoring the configuration

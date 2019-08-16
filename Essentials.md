@@ -1,5 +1,14 @@
 # A list of essentials commands (aka cheat sheet)
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Basic/first step](#basicfirst-step)
+* [Get help](#get-help)
+* [Modes](#modes)
+
+<!-- vim-markdown-toc -->
+
 ### Basic/first step
 
 - Open a file
