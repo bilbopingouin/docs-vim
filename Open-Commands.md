@@ -27,6 +27,7 @@
 	* [Open an existing file within a new split window (vertical)](#open-an-existing-file-within-a-new-split-window-vertical)
 * [Open several files each within its own tab](#open-several-files-each-within-its-own-tab)
 * [Buffer list](#buffer-list)
+* [Sessions](#sessions)
 
 <!-- vim-markdown-toc -->
 
@@ -34,144 +35,229 @@
 
 Ignoring the configuration
 
-    vim -u NONE
+```bash
+vim -u NONE
+```
 
 ### diff
 
-    vim -d file1 file2
+```bash
+vim -d file1 file2
+```
 
 See also [Diff in Various-Commands](Various-Commands#diff).
 
 ### RO
 
-    vim -R file # opens in read only still modifiable
-    vim -M file # opens non modifiable
+```bash
+vim -R file # opens in read only still modifiable
+vim -M file # opens non modifiable
+```
 
 ### multiple files
 
-    vim file1 file2    # creates a list of arguments (:args) which can be accessed with :next and :prev
-    vim -o file1 file2 # a window for each file. Horizontal split
-    vim -O file1 file2 # a window for each file. Vertical split
-    vim -p file1 file2 # a tab for each file
+```bash
+vim file1 file2    # creates a list of arguments (:args) which can be accessed with :next and :prev
+vim -o file1 file2 # a window for each file. Horizontal split
+vim -O file1 file2 # a window for each file. Vertical split
+vim -p file1 file2 # a tab for each file
+```
 
 ### open at a given position
 
-    vim file +N        # opens file at line N.
-    vim file +/pattern # opens file at first occurence of 'pattern'
+```bash
+vim file +N        # opens file at line N.
+vim file +/pattern # opens file at first occurence of 'pattern'
+```
 
 ### tags
 
-    vim -t pattern 
+```bash
+vim -t pattern 
+```
 
 see also [vim: programming](Programming)
 
 
 ### no swap
 
-    vim -n [file]
+```bash
+vim -n [file]
+```
 
 ### easy mode
 
-    vim -y [file]
+```bash
+vim -y [file]
+```
 
 ### encrypt mode
 
-    vim -x [file]
+```bash
+vim -x [file]
+```
 
 ### recovery mode
 
-    vim -r [file]
+```bash
+vim -r [file]
+```
 
 ### run commands
 
-    vim +{cmd} vim -c{cmd}
-    vim --cmd={cmd} # this precedes the .vimrc
+```bash
+vim +{cmd} vim -c{cmd}
+vim --cmd={cmd} # this precedes the .vimrc
+```
 
 ### create a script automatically
 
-    vim -w scriptname file # all vim commands are stored in the script
+```bash
+vim -w scriptname file # all vim commands are stored in the script
+```
 
 ### Open file within vim
   
 #### Open an existing file:
 
-    :e[dit] path/file.name
+```vim
+:e[dit] path/file.name
+```
     
 #### Create a new file/buffer:
 
-    :enew [path/file.name]
+```vim
+:enew [path/file.name]
+```
     
 #### Browse for an existing file to open:
 
-    :e[dit] .
+```vim
+:e[dit] .
+```
     
 #### Open a file in a new tab:
 
-    :tabe[dit] path/file.name
+```vim
+:tabe[dit] path/file.name
+```
     
 #### Open a new file with an empty buffer:
 
-    :tabnew [path/file.name]
+```vim
+:tabnew [path/file.name]
+```
     
 #### Open a new file in a new split window (horizontal)
 
-    :new [path/file.name]
+```vim
+:new [path/file.name]
+```
     
 #### Open a new file in a new split window (vertical)
 
-    :vert new [path/file.name]
-    :vne[w] [path/file.name]
+```vim
+:vert new [path/file.name]
+:vne[w] [path/file.name]
+```
     
 #### Open an existing file within a new split window (horizontal)
 
-    :sp[lit] path/file.name
-    :new path/file.name
+```vim
+:sp[lit] path/file.name
+:new path/file.name
+```
     
 #### Open an existing file within a new split window (vertical)
 
-    :vne[w] path/file.name
+```vim
+:vne[w] path/file.name
+```
         
 ### Open several files each within its own tab
   
 Open all files in the arg list:
 
-    :tab all
+```vim
+:tab all
+```
     
 Set the argument list and open them:
 
-    :arg[s] **/*.c | tab all
+```vim
+:arg[s] **/*.c | tab all
+```
 
 opens all the C files within the sub-directories
 and closes the currently opened file
     
 Set the argument list and open them, keeping currently opened files
 
-    :arga[dd] **/*.c | tab all
+```vim
+:arga[dd] **/*.c | tab all
+```
 
 Adds the found C files within the sub-dir to the list of arguments
 and opens all of them within tabs, or split windows.
     
 See also: 
 
-    :help argument-list
-    :help :all
+```vim
+:help argument-list
+:help :all
+```
         
 ### Buffer list
   
 List the buffers opened
 
-    :ls
+```vim
+:ls
+```
     
 Jump to the previous buffer
 
-    :bp
+```vim
+:bp
+```
 
 Jump to the next buffer
 
-    :bn
+```vim
+:bn
+```
     
 Jump to the buffer N
 
-    :bN
+```vim
+:bN
+```
     
 See also [How to effectively work with multiple files in vim](https://stackoverflow.com/questions/53664/how-to-effectively-work-with-multiple-files-in-vim)
+
+### Sessions
+
+It is possible to save the current sessions (all currently open views).
+
+It can be started running
+
+```vim
+:mks[ession][!] [file]
+```
+
+The info about the current session will be stored in the `file` (if omitted, it uses `Session.vim`). The session can be reopened using
+
+```bash
+vim -S session-filename.vim
+```
+
+or, from within `vim` as
+
+```vim
+:so[urce] session-filename.vim
+```
+
+See also
+
+- `:help :mksession`
+- [How to auto save vim session on quit and auto reload on start including split window state?](https://stackoverflow.com/q/5142099/3337196)
