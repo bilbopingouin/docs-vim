@@ -102,6 +102,7 @@ Open-Commands#
 - [Specific Configuration](Specific-Configuration)
   * [Incrementation C-A, C-X](Specific-Configuration#incrementation-c-a-c-x)
   * [Abreviations](Specific-Configuration#abreviations)
+- [Syntax Coloring](Syntax-Coloring)
 - [Tabs Windows-Browsing](Tabs-Windows-Browsing)
   * [Buffers](Tabs-Windows-Browsing#buffers)
   * [Basic](Tabs-Windows-Browsing#basic)
