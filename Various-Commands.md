@@ -16,8 +16,8 @@
 * [count characters](#count-characters)
 * [Copy-paste](#copy-paste)
 * [Recall and edit previous commands/searches](#recall-and-edit-previous-commandssearches)
-* [Sorting](#sorting)
 * [Easter eggs](#easter-eggs)
+* [Visual selection](#visual-selection)
 
 <!-- vim-markdown-toc -->
 
@@ -361,16 +361,6 @@ When entering a command, it is possible to enter the command window with
 <C-f>
 ```
         
-### Sorting
-  
-Sorting lines, visual select a few lines and then
-
-```vim
-:sort
-```
-
-More on `:help :sort`
-
 ### Easter eggs
 
 Some Easter Eggs have been hidden
@@ -386,4 +376,15 @@ Some Easter Eggs have been hidden
 :Ni!
 :help bar
 :smile
+```
+
+### Visual selection
+
+The following commands are useful
+
+```vim
+v     " starts continuous visual selection
+<C-v> " starts block visual selection
+<Esc> " Discard visual selection (back to normal mode)
+gv    " reselect the visual selection
 ```

@@ -4,6 +4,8 @@
 <!-- vim-markdown-toc GFM -->
 
 * [Incrementation C-A, C-X](#incrementation-c-a-c-x)
+	* [Number format](#number-format)
+	* [Series](#series)
 * [Abreviations](#abreviations)
 
 <!-- vim-markdown-toc -->

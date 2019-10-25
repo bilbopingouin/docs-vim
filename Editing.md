@@ -1,5 +1,12 @@
 # Editing
 
+
+<!-- vim-markdown-toc GFM -->
+
+* [Sort lines](#sort-lines)
+
+<!-- vim-markdown-toc -->
+
 ### Sort lines
 
 Using

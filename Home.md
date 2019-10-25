@@ -6,20 +6,4 @@ However, I have a few tips/hints/summary of some vim commands, and I'll add them
 
 Again, it is intended to be for me, but might be useful for someone.
 
-The following categories can be found
-
-- [Browsing](Browsing)
-- [Character Encoding](Character-Encoding)
-- [Code Review](Code-Review)
-- [Compiling](Compiling)
-- [Configuration](Configuration)
-- [External Commands](External-Commands)
-- [Open Commands](Open-Commands)
-- [Plugins](Plugins)
-- [Programming](Programming)
-- [Search Commands](Search-Commands)
-- [Specific Configuration](Specific-Configuration)
-- [Tabs browsing](Tabs-Browsing)
-- [Various Commands](Various-Commands)
-
-
+The variopus categories can be found on the right side. However, if you don't know where to start, I'd recommend to have a look at the [Essentials](essentials).
