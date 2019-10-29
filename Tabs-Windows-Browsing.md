@@ -27,6 +27,8 @@ Vim has great built-in features to browse and work with various files
 
 See, e.g.
 - [User buffers effectively](https://stackoverflow.com/a/21338192/3337196)
+- [Vim buffer FAQ](https://vim.fandom.com/wiki/Vim_buffer_FAQ)
+- [Buffers](https://vim.fandom.com/wiki/Buffers)
 
 ### Basic
 
@@ -70,11 +72,40 @@ This can be avoided, setting
 
 #### Buffer names
 
-Instead of calling the buffer number ('N'), it might be possible to call it using the buffer name. This can also be used from matvhing the name, like
+Instead of calling the buffer number ('N'), it might be possible to call it using the buffer name. This can also be used from matching the name, like
 
+```vim
+:b **/*pattern*.c
+```
 
+It can be checked using `<Tab>`.
 
 See also [Jumps](Various-Commands#jumps) and [Closing Files](Various-Commands#closing-files).
+
+#### Buffer list
+
+The list of buffers can be found using
+
+```vim
+:buffers   " or
+:ls
+```
+
+Files can be added to the list using
+
+```vim
+:e[dit] single_file  " opens the file
+:badd single_file    " add to the list without opening it
+:args **/*.[ch] | e  " edits multiple files (and thus load them to the list)
+```
+
+Files can be removed from the buffer list using
+
+```vim
+:bd N         " remove buffer number N from list
+:bd filename  " remove buffer named filename from list
+:bd %         " remove current buffer from list
+```
 
 ## Tabs
 
