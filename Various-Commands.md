@@ -10,7 +10,7 @@
 * [undo](#undo)
 * [registers](#registers)
 * [Jumps](#jumps)
-* [closing files](#closing-files)
+* [saving and closing files](#saving-and-closing-files)
 * [arguments list](#arguments-list)
 * [spell-checking](#spell-checking)
 * [count characters](#count-characters)
@@ -243,14 +243,32 @@ Similarly the changes within the file are also remembered one has
 - `g;`                jumps back to older position in change list
 - `g,`                jumps forward to newer position in change list
 
-### closing files
+### saving and closing files
 
 If one wants to close the current buffer (e.g. to open it somewhere else) without leaving vim, one can use any of the following
 
-- `:enew`   edits a new unamed buffer and thus frees the previous buffer
-- `:bun`    unload buffer (buffer unload)
-- `:bd`     unload buffer and delete it from buffer list (buffer delete)
-- `:bw`     like :bd but really remove it from any list (buffer wipeout)
+```vim
+:enew   " edits a new unamed buffer and thus frees the previous buffer
+:bun    " unload buffer (buffer unload)
+:bd     " unload buffer and delete it from buffer list (buffer delete)
+:bw     " like :bd but really remove it from any list (buffer wipeout)
+```
+
+Saving a file can be done using
+
+```vim
+:w			" saves the current buffer
+:w filename		" saves the current buffer under a different name
+:sav[eas] filename	" saves the current buffer under a different name and load the new file as a buffer
+:wa[ll]			" saves all the buffers write-all
+```
+
+Saving and exiting can be done using
+
+```vim
+:wq	      " writes and quit
+ZZ	      " similar to :wq
+```
 
 ### arguments list
 

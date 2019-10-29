@@ -6,6 +6,7 @@
 * [Basic/first step](#basicfirst-step)
 * [Get help](#get-help)
 * [Modes](#modes)
+* [Configuration](#configuration)
 
 <!-- vim-markdown-toc -->
 
@@ -73,3 +74,23 @@ The following modes are available:
   ```vim
   :help Ex-mode
   ```
+
+### Configuration
+
+Use a plugin manager like [vim-plug](https://github.com/junegunn/vim-plug). Details of the installation can be found on the respective plugin description. To get started, edit your `.vimrc` and add the following
+
+```vim
+call plug#begin()
+Plug 'tpope/vim-sensible'
+call plug#end()
+```
+
+Follow by the folliwing commands
+
+```vim
+:w
+:so %
+:PlugInstall
+```
+
+And there you are, a very basic configuration which will allow to get some basic configuration.

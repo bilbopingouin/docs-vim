@@ -7,6 +7,12 @@
 * [Calculator](#calculator)
 	* [Using python](#using-python)
 	* [Using the expression register](#using-the-expression-register)
+* [Shell interactions](#shell-interactions)
+	* [Call a shell](#call-a-shell)
+	* [Run a command](#run-a-command)
+	* [Insert result of a command](#insert-result-of-a-command)
+	* [Get man page](#get-man-page)
+	* [Start a terminal](#start-a-terminal)
 
 <!-- vim-markdown-toc -->
 
@@ -93,4 +99,41 @@ Floating point computation:
 |    isnan()            | check for not a number		  |
 
 see also `:help function-list`
+
+### Shell interactions
+
+#### Call a shell
+
+```vim
+:sh[ell]
+```
+
+#### Run a command
+
+```vim
+:!ls *.c  " lists all the C-files of the current directory
+```
+
+#### Insert result of a command
+
+```vim
+:r!ls *.c  " reads the input.
+:.!ls *.c  " alternative producing the same result
+```
+
+#### Get man page
+
+```vim
+K     " opens the manpage of the command under the cursor
+```
+
+#### Start a terminal
+
+Starting with ViM 8, one can run 
+
+```vim
+:terminal
+```
+
+to run a terminal/shell within vim. But it only works with the `+terminal` option activated when compiling.
 
