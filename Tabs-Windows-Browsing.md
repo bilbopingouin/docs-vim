@@ -107,6 +107,18 @@ Files can be removed from the buffer list using
 :bd %         " remove current buffer from list
 ```
 
+Additionally, it is possible to close several buffers at the same time using
+
+```vim
+:bd buffer1 buffer2 buffer3
+```
+which can be automatized using 
+
+```vim
+:bd *pattern*   " followed by
+<C-a>
+```
+
 ## Tabs
 
 ### Basic
