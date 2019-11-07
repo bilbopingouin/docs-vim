@@ -45,6 +45,7 @@ See, e.g.
 ```vim
 :sb N	      " split the window and open the buffer 'N'
 :vert sb N    " same as previous but with vertical split
+:tab sb N     " same as previous but as a new tab
 :set hidden   " hide abandonne buffers
 :bufdo	...   " run a command on all buffers
 ```
@@ -155,6 +156,14 @@ When the window is split, one can move the current buffer to its own tab using
     
 See also [How do I move an existing window to a new tab](https://stackoverflow.com/questions/1758301/how-do-i-move-an-existing-window-to-a-new-tab#1761745)
 
+### Close all other tabs
+
+Using
+
+```vim
+:tabonly
+```
+
 ## Windows browsing
 
 ### Create windows
@@ -185,3 +194,12 @@ It is also possible to set the windows to a given position:
 ```
 
 See also [vim doc: window-moving](http://vimdoc.sourceforge.net/htmldoc/windows.html#window-moving).
+
+### Close all other windows
+
+Whenever one wants to see the current window larger, one can use
+
+```vim
+:on[ly]    " or
+<C-w>o
+```
