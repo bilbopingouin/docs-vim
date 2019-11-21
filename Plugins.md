@@ -16,6 +16,7 @@
 	* [vim-plug](#vim-plug)
 	* [Vim-Packages](#vim-packages)
 * [Fugitive](#fugitive)
+* [GV](#gv)
 * [Alignments](#alignments)
 * [ALE](#ale)
 
@@ -315,6 +316,23 @@ Avoid increasing a list of buffers too much:
 ```vim
 autocmd BufReadPost fugitive://* set bufhidden=delete
 ```
+
+### GV
+
+[GV](https://github.com/junegunn/gv.vim) is an extension of `vim-fugitive`. It allows to see the log tree of git directly within vim. It can then be simply started using
+
+```vim
+:GV
+```
+
+Alternatively, one can use
+
+```vim
+:GV!  " lists only commits affecting the current file
+:GV?  " populate the location list with revisions of the current file
+```
+
+There are a few commands available to browse the commit. Among them, `o` opens a commit to see the details, and `q` closes the current window/leaves GV.
     
 ### Alignments
   

@@ -10,14 +10,17 @@ Vim has great built-in features to browse and work with various files
 	* [Intermediate](#intermediate)
 		* [Workflow](#workflow)
 		* [Buffer names](#buffer-names)
+		* [Buffer list](#buffer-list)
 * [Tabs](#tabs)
 	* [Basic](#basic-1)
 	* [Slightly more advanced](#slightly-more-advanced)
 	* [Move current buffer to its own tab](#move-current-buffer-to-its-own-tab)
+	* [Close all other tabs](#close-all-other-tabs)
 * [Windows browsing](#windows-browsing)
 	* [Create windows](#create-windows)
 	* [Shift windows](#shift-windows)
 	* [Move windows](#move-windows)
+	* [Close all other windows](#close-all-other-windows)
 
 <!-- vim-markdown-toc -->
 
