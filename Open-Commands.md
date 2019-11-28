@@ -103,6 +103,8 @@ vim -x [file]
 vim -r [file]
 ```
 
+When opening a file, vim may warn of a different version existing (due to crash or open somewhere else, etc.). On option is to use [Recover.vim](https://github.com/chrisbra/Recover.vim), which offers the option to compare the saved version and the automatically saved (recover) version.
+
 ### run commands
 
 ```bash
