@@ -30,7 +30,7 @@
 - *DrawIt*: allows to draw diagrams within vim, see also [DrawIt!](https://www.vim.org/scripts/script.php?script_id=40),
 - *echofunc*: together with tags, it allows to echo the function declaration in C/C++. See also [Echo the function declaration](https://www.vim.org/scripts/script.php?script_id=1735), (§)
 - *fugitive*: a few commands for git, like adding the branch name in the vim status bar. See also [A Git Wraper](https://www.vim.org/scripts/script.php?script_id=2975), (§)
-- *recover*: adds an option "Compare" when recovering from a swap file, see also [Show differences between recovered files](https://www.vim.org/scripts/script.php?script_id=3068),
+- *recover*: adds an option "Compare" when recovering from a swap file, see also [Show differences between recovered files](https://www.vim.org/scripts/script.php?script_id=3068) and [recovery mode](Open-Commands#recovery-mode),
 - *solarized*: colorscheme for vim. See also [Solarized colorscheme](https://www.vim.org/scripts/script.php?script_id=3520), (§)
 - *ttagecho*: similar to echofunc. See also [Tag information](https://www.vim.org/scripts/script.php?script_id=2055),
 - *twitvim*: allows to interact with the twitter API from within vim. See also [Twitter client](https://www.vim.org/scripts/script.php?script_id=2204),
