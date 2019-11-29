@@ -35,6 +35,7 @@
 - *ttagecho*: similar to echofunc. See also [Tag information](https://www.vim.org/scripts/script.php?script_id=2055),
 - *twitvim*: allows to interact with the twitter API from within vim. See also [Twitter client](https://www.vim.org/scripts/script.php?script_id=2204),
 - *undotree*: allows a graphical visualisation of the undo history (useful when using a combination or undo/redo together with branches). See also [Display your undo history in a graph](https://www.vim.org/scripts/script.php?script_id=4177), (§)
+- *vim-clang-format*: allows an automatic formatting of a file (or part of a file). See [vim-clang-format](https://github.com/rhysd/vim-clang-format)
 - *vim-games*: 4 games in one. See also [ViM Games](https://github.com/jmanoel7/vim-games), (§)
 - *vim-surround*: allows to surround words or sentences with signs and/or tags as well as edit them. Great for HTML/XML things. See also [Surround.vim](https://www.vim.org/scripts/script.php?script_id=1697), (§)
 - *vim-latex*: transforms vim into a LaTeX IDE. As for cvim, it might be considered too intrusive, namely defining too many things, making it unpracticable when editing other types of documents. See also [LaTeX Suite](https://www.vim.org/scripts/script.php?script_id=475),
