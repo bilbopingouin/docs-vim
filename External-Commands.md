@@ -137,3 +137,25 @@ Starting with ViM 8, one can run
 
 to run a terminal/shell within vim. But it only works with the `+terminal` option activated when compiling.
 
+### Clang format
+
+`clang-format` is a program based on the `clang` compiler which allows to check the format of the code, or update it. To integrate it in vim, one can use the plugin [vim-clang-format](https://github.com/rhysd/vim-clang-format), or using [ALE](https://github.com/dense-analysis/ale) with the following configuration
+
+```vim
+" Run automatic fixes when saving the file
+let g:ale_fix_on_save = 1
+
+" List of fixes
+let g:ale_fixers = {
+   \ '*': ['remove_trailing_lines','trim_whitespace'],
+   \ 'c': ['clang-format'],
+   \ 'cpp': ['clang-format'],
+   \  'python': ['autopep8']
+   \}
+```
+
+which automatically runs `clang-format` on C or C++ files. `clang-format` can be configured using a `.clang-format` file. See also [ALE configuration](Plugins#ale).
+
+### Clang tidy
+
+`clang-format` is a program based on the `clang` compiler which allows to check the standard of the code, or update it. It can be integrated in vim using [ALE](https://github.com/dense-analysis/ale). See also [ALE configuration](Plugins#ale).
