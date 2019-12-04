@@ -159,3 +159,46 @@ which automatically runs `clang-format` on C or C++ files. `clang-format` can be
 ### Clang tidy
 
 `clang-format` is a program based on the `clang` compiler which allows to check the standard of the code, or update it. It can be integrated in vim using [ALE](https://github.com/dense-analysis/ale). See also [ALE configuration](Plugins#ale).
+
+### Indent
+
+On linux, a program call `indent` allows to reformat the code (similar to clang-format). It can be called as [following](https://stackoverflow.com/a/30767640/3337196):
+
+```vim
+:%!indent
+```
+
+Many settings can be decided. I would suggest the following flags
+
+```bash
+indent \
+  -nbad              \ # not forcing blank line after a declaration 
+  -bap               \ # blank line after procedure
+  -bbb               \ # blank line before block comments
+  -bbo               \ # break long-line before a boolean
+  -nbc               \ # not forcing newline after commas in declaration
+  -bl                \ # { placed on the line following the if
+  -blf               \ # { placed on the line after the function declaration
+  -bli0              \ # { at the same indent than the function
+  -bls               \ # { placed on the line after the struct declaration
+  -nce               \ # not cuddle 'else', e.g. } else {
+  -cli2              \ # case indentation of 2 spaces
+  -cp2               \ # comments to the right of #else and #endif
+  -ncs               \ # not forcing space after cast
+  -di2               \ # declaration indentation
+  -i2                \ # indentation
+  -ip4               \ # parameter indentation
+  -l100               \ # length of line
+  -nut               \ # use spaces instead of tabs
+  -pcs               \ # space after procedure calls, before '('
+  -ppi2              \ # indentation of conditional preprocessors
+  -npsl              \ # not procnames at the start of line
+  -saf               \ # space after for
+  -sai               \ # .. if
+  -saw               \ # .. while
+  -sbi0              \ # 0 spaces indentation for braces for structs
+  -sc                \ # add '*' left of block comment lines
+  -nsob              \ # no swallow blank lines
+```
+
+Those can also be saved in `.indent.pro`. Simply the list of commands separated by spaces, tabs or newlines. C/C++ comments would be ignored.
