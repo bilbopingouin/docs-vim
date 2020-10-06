@@ -18,7 +18,11 @@ This isn't an exhaustive list, one should refer to
   ```
 - [All the right moves](https://vim.fandom.com/wiki/All_the_right_moves)
 
-It should be noted that the movements can also be used in combination to e.g. `y` (yank), `d` (deletes) or `c` (deletes and insert).
+It should be noted that the movements can also be used in combination to e.g. 
+- `y` (yank), 
+- `d` (deletes),
+- `v` (select)
+- `c` (deletes and insert).
 
 ### Lines
 
@@ -40,15 +44,15 @@ G	  " bottom of the file
 gg	  " top of the file
 ```
 
-Vertical movements
+Horizontal movements
 
 ```vim
-0	  " begining of the line
-$	  " end of the line
-h	  " one character to the left
-<Left>	  " one character to the left
-l	  " one character to the right
-<Right>	  " one character to the right
+0	        " begining of the line
+$	        " end of the line
+h	        " one character to the left
+<Left>    " one character to the left
+l	        " one character to the right
+<Right>   " one character to the right
 ```
 
 ### Words
@@ -56,11 +60,38 @@ l	  " one character to the right
 Movements can also include words.
 
 ```vim
-w	  " forward to beginning of words
-e	  " forward to end of words
-b	  " backward to beginning of words
-ge	  " backward to end of words
+w	    " forward to beginning of words
+e	    " forward to end of words
+b	    " backward to beginning of words
+ge    " backward to end of words
 ```
+
+Using capitalized movements, usually ends on the adjacent space.
+
+### Text objects
+
+There are some movements that very useful for text, like
+
+```vim
+ciw   " Delete a single word and switch to insert mode
+```
+
+They arte built on the following combination: 
+- command (e.g. `c`, `v`, ...)
+- `i`/`a`: 'a' / inner. The difference resides in counting the white spaces or not
+- range:
+  - `w` for words,
+  - `W` for WORDs (differs in the types of characters considered),
+  - `s` for sentence,
+  - `p` for paragraph,
+  - `[`/`]` for a `[..]` block,
+  - `(`/`)`/`b` for a `(..)` block,
+  - `<`/`>` for a `<..>` block,
+  - `{`/`}`/`B` for a `{..}` block,
+  - `t` for a tag block (HTML/XML-type tags),
+  - `"`/`'`/`` ` `` for a quoted string
+
+
 
 ### Various
 
