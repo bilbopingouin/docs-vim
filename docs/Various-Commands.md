@@ -223,6 +223,13 @@ list and see content of all registers
 The following registers have actions on copy-paste with the rest of the system (clipboard)
 if vim has been compiled with `+clipboard`: `*` and `+` registers.
 
+It should be noted that lower-cases and upper-cases register addresses the same register but in a different way.
+
+```vim
+:yank a   " sets the content of the register `a`
+:yank A   " appends to the content of the register `a`
+```
+
 more info:
 - [How to Use Registers](https://stackoverflow.com/questions/1497958/how-to-use-vim-registers)
 - [How to Paste](https://stackoverflow.com/questions/3997078/how-to-paste-text-into-vim-command-line/3997110#3997110)
