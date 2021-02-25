@@ -79,12 +79,17 @@ With current configuration, `<F9>` allows to start a file browser on the left of
     
 - `<F9>`  to remove browsing
 
+More can be found with `:h netrw`.
+
 ### File jumping    
 
+From the `a.vim` plugin,
 - `:A`	  switches to header
 - `:AT`	  switches to header in a new tab
-- `<C-f>` switches to file under cursor
-- `<C-o>` jumps back
+
+Built-in functions
+- `<C-w>, f` opens file under cursor
+- `<C-o>`    jumps back
     
 ### Searching for the files
 
@@ -108,8 +113,7 @@ See also [Various Commands](Various-Commands#marks)
 - `zO` opens a single fold (with sub folds)
 - `zc` closes a single fold
 - `zM` closes all folds in current line
-    
-    
+
 ### Combining `cscope`, `ctag` and `vim`
 
 References
@@ -207,5 +211,16 @@ We can configure the following command
 
 which allows to search the current word's definition.
 
+### FZF
 
+[Fuzzy Finder](https://github.com/junegunn/fzf.vim) adapted for vim. It offers various commands to search files or other elements. In particular,
 
+- `:Files` allows to search the file names in sub directories
+- `:Maps` search in the defined maps
+- `Rg` content of files
+
+### Any-jump
+
+Uses rg or ag to search for code elements. More on [github](https://github.com/pechorin/any-jump.vim). 
+
+Simply use `<leader>j` on any element within a code.
