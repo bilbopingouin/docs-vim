@@ -19,6 +19,12 @@
 * [GV](#gv)
 * [Alignments](#alignments)
 * [ALE](#ale)
+* [Gitgutter](#gitgutter)
+* [NERDTree](#nerdtree)
+* [multiple-cursors](#multiple-cursors)
+* [vimprj](#vimprj)
+* [vim-indexer](#vim-indexer)
+* [vim-abolish](#vim-abolish)
 
 <!-- vim-markdown-toc -->
 
@@ -448,3 +454,46 @@ For more complex code, one can use `compile_commands.json` files to indicate to 
 ```
 
 
+### Gitgutter
+
+This plugins shows git diff indications within the file. This requires to have the line number shown (`set number`).
+
+### NERDTree
+
+More advanced side file browsing than the built-in one. It gets called using
+
+```
+:NERDTreeToggle
+```
+
+### multiple-cursors
+
+Allows to work on some occurences of the same word. Using `C-N` to activate it, and then repeating it to select the next occurences. Then `I`, `c` to modify them.
+
+### vimprj
+
+Allows to define a directory `.vimprj` for project-specific configuration. This allows, e.g., to have different indentation setting for a given project, compared to the default ones. This can also be used to store the tags, cscope, etc. files that are automatically generated.
+
+### vim-indexer
+
+Automatic indexing of files within a directory, to generate an correct list of tags.
+
+### vim-abolish
+
+Introduce case-sensitive handling for substitute.
+
+```
+:%S/foo/bar/g
+```
+
+will replace
+
+```
+foo Foo FOO FoO
+```
+
+with
+
+```
+bar Bar BAR FoO
+```
