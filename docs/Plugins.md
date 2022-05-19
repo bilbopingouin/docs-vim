@@ -25,6 +25,7 @@
 * [vimprj](#vimprj)
 * [vim-indexer](#vim-indexer)
 * [vim-abolish](#vim-abolish)
+* [limelight](#limelight)
 
 <!-- vim-markdown-toc -->
 
@@ -496,4 +497,13 @@ with
 
 ```
 bar Bar BAR FoO
+```
+
+### limelight
+
+Shading other paragraphs to increase the focus while editing a file.
+
+```vim
+:Limelight0.3	" Reduces the light to unselected paragraphs to 0.3 light
+:Limelight!	" disable limelight
 ```
